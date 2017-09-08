@@ -1,0 +1,29 @@
+package scalaprojects
+
+object OwelStringReverse {
+  def main(args:Array[String]){
+    val s="satish";
+    val x:Array[Char]=s.toArray;
+    System.out.println(reverse(x));
+    
+  }
+ def reverse(a:Array[Char]):Array[Char]=
+ {
+    var i=0;
+    var j=a.size-1;
+    while(i!=j){
+      if(a(i)=='a' | a(i)=='e' | a(i)=='i' | a(i)=='o' | a(i)=='u'){
+         if(a(j)=='a' | a(j)=='e' | a(j)=='i' | a(j)=='o' | a(j)=='u'){
+           val n=a(i);
+           a(i)=a(j);
+           a(j)=n;
+           i+=1;
+           j-=1;
+         }
+         else{j-=1;;}
+      }
+      else{i+=1;}
+    }
+    a
+  }
+}
