@@ -1,0 +1,32 @@
+package com.iitjobs.scala
+import scala.collection.mutable.Stack
+object StackReverse {
+  def main(args:Array[String]){
+  val st=new Stack[Int]();
+  st.push(2,8,9,6,4,0)
+  println(st.toString())
+  
+  println(reverse(st))
+}
+  def reverse(st:Stack[Int]):Stack[Int]={
+    if(st.isEmpty){
+      return st
+    }
+    val x=st.pop()
+    var st1=reverse(st)
+   var st2= bottum(st1,x)
+  return  st2
+  }
+  def bottum(st:Stack[Int],x:Int):Stack[Int]={
+    if(st.isEmpty){
+      st.push(x)
+      return st
+    }
+    val z=st.pop()
+    var st4=bottum(st,x)
+    st4.push(z)
+    return st4
+    
+  }
+  
+}
